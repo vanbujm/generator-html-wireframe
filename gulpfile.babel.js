@@ -2,7 +2,7 @@ import path from 'path';
 import gulp from 'gulp';
 import eslint from 'gulp-eslint';
 import excludeGitignore from 'gulp-exclude-gitignore';
-import mocha from 'gulp-mocha';
+import jest from 'gulp-jest';
 import istanbul from 'gulp-istanbul';
 import nsp from 'gulp-nsp';
 import plumber from 'gulp-plumber';
@@ -14,15 +14,24 @@ const es6Code = 'generators/**/*.es6';
 
 gulp.task('babel', () => {
   return gulp.src(`${es6Code}`)
-    .pipe(babel())
+    .pipe(babel({retainLines: 'true'}))
     .pipe(rename(path => {
       path.extname = '.js';
     }))
     .pipe(gulp.dest('generators/'));
 });
 
+gulp.task('babel-test', () => {
+  return gulp.src('test/*.es6')
+    .pipe(babel())
+    .pipe(rename(path => {
+      path.extname = '.js';
+    }))
+    .pipe(gulp.dest('test/'));
+});
+
 gulp.task('static', () => {
-  return gulp.src([`${es6Code}`, 'test/*.js'])
+  return gulp.src([`${es6Code}`, 'test/*.es6'])
     .pipe(excludeGitignore())
     .pipe(eslint())
     .pipe(eslint.format())
@@ -42,19 +51,12 @@ gulp.task('pre-test', ['babel'], () => {
     .pipe(istanbul.hookRequire());
 });
 
-gulp.task('test', ['pre-test'], cb => {
-  let mochaErr;
+gulp.task('test', ['pre-test', 'babel-test'], () => {
+  // let mochaErr;
 
   gulp.src('test/**/*.js')
-    .pipe(plumber())
-    .pipe(mocha({reporter: 'spec'}))
-    .on('error', err => {
-      mochaErr = err;
-    })
-    .pipe(istanbul.writeReports())
-    .on('end', () => {
-      cb(mochaErr);
-    });
+    .pipe(jest())
+    .pipe(istanbul.writeReports());
 });
 
 gulp.task('watch', () => {

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-constructor */
 import 'babel-polyfill';
 import yeoman from 'yeoman-generator';
 import chalk from 'chalk';
@@ -5,9 +6,10 @@ import yosay from 'yosay';
 
 class HTMLWireframe extends yeoman.Base {
   // Using `constructor()` instead of `initializing()`
-  // constructor(...args) {
-  //   super(...args);
-  // }
+  constructor(args, options) {
+    super(args, options);
+    this.test1 = 'blah';
+  }
 
   async prompting() {
     console.log(yosay(chalk.blue('Welcome to the HTML Wireframe generator!')));
