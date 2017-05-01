@@ -28,10 +28,10 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-latest": "^6.24.1",
     "eslint": "^3.19.0",
-    "eslint-config-xo-space": "^0.15.0",
+    "eslint-config-xo-space": "^0.16.0",
     "jest-cli": "^19.0.2",
     "node-sass": "^4.5.2",
-    "yeoman-assert": "^2.2.3",
+    "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.6.0"
   },
   "babel": {
