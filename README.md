@@ -1,4 +1,4 @@
-# generator-html-wireframe [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-html-wireframe [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Creates wireframe html pages for rapid prototyping
 
 ## Installation
@@ -34,5 +34,3 @@ MIT © [Jonathan Van Buren]()
 [travis-url]: https://travis-ci.org/vanbujm/generator-html-wireframe
 [daviddm-image]: https://david-dm.org/vanbujm/generator-html-wireframe.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/vanbujm/generator-html-wireframe
-[coveralls-image]: https://coveralls.io/repos/vanbujm/generator-html-wireframe/badge.svg
-[coveralls-url]: https://coveralls.io/r/vanbujm/generator-html-wireframe
