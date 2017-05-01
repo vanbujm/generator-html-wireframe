@@ -16,6 +16,22 @@ Then generate your new project:
 yo html-wireframe
 ```
 
+To build from source:
+```bash
+git clone https://github.com/vanbujm/generator-html-wireframe.git
+cd generator-html-wireframe
+./build.sh
+```
+Testing:
+Once built:
+```bash
+npm test
+```
+Generate an example for testing:
+```bash
+./test-gen.sh
+```
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
