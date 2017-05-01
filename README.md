@@ -23,7 +23,6 @@ cd generator-html-wireframe
 ./build.sh
 ```
 Testing:
-Once built:
 ```bash
 npm test
 ```
