@@ -16,7 +16,7 @@ Then generate your new project:
 yo html-wireframe
 ```
 
-To build from source:
+## To build from source
 ```bash
 git clone https://github.com/vanbujm/generator-html-wireframe.git
 cd generator-html-wireframe
