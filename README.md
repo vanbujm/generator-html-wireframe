@@ -1,4 +1,4 @@
-# generator-html-wireframe [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-html-wireframe [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Creates wireframe html pages for rapid prototyping
 
 ## Installation
@@ -30,7 +30,5 @@ MIT © [Jonathan Van Buren]()
 
 [npm-image]: https://badge.fury.io/js/generator-html-wireframe.svg
 [npm-url]: https://npmjs.org/package/generator-html-wireframe
-[travis-image]: https://travis-ci.org/vanbujm/generator-html-wireframe.svg?branch=master
-[travis-url]: https://travis-ci.org/vanbujm/generator-html-wireframe
 [daviddm-image]: https://david-dm.org/vanbujm/generator-html-wireframe.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/vanbujm/generator-html-wireframe
