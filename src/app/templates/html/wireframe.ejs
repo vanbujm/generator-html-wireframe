@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title><%= answers.appName %> Wireframe</title>
   <link rel="stylesheet" type="text/css" href="../css/<%= answers.appName %>-style.css">
+  <% if (answers.nav !== 'None') { %>
+  <link rel="stylesheet" type="text/css" href="../css/nav.css">
+  <% } %>
 </head>
 <body>
 <% if(answers.nav !== 'None') { %>
@@ -29,10 +32,18 @@
     <li class="hover-container">
       <a href="">hover list item 5</a>
       <ul class="hover-menu">
-        <li>hover item 1</li>
-        <li>hover item 2</li>
-        <li>hover item 3</li>
-        <li>hover item 4</li>
+        <li>
+          <a href="">hover item 1</a>
+        </li>
+        <li>
+          <a href="">hover item 2</a>
+        </li>
+        <li>
+          <a href="">hover item 3</a>
+        </li>
+        <li>
+          <a href="">hover item 4</a>
+        </li>
       </ul>
     </li>
   </ul>

@@ -45,7 +45,7 @@
   "repository": "vanbujm/generator-yo",
   "scripts": {
     "lint": "eslint src/**/*.es6",
-    "babel": "babel src --out-dir generators --copy-files",
+    "babel": "babel src --out-dir generators --copy-files --ignore src/app/templates/sass",
     "sass": "node-sass src/app/templates/sass/ -o src/app/templates/css/",
     "test": "jest",
     "watch": "node-sass -w src/app/templates/sass/ -o src/app/templates/css/"

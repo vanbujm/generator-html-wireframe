@@ -98,24 +98,19 @@ var HTMLWireframe = function (_Generator) {
           console.log(_chalk2.default.green('copying files...\n'));
           this.fs.copyTpl(this.templatePath('html/wireframe.ejs'), this.destinationPath('html/' + this.answers.appName + '-wireframe.html'), { answers: this.answers });
           this.fs.copyTpl(this.templatePath('css/style.css'), this.destinationPath('css/' + this.answers.appName + '-style.css'), { answers: this.answers });
+          switch (this.answers.nav) {
+            case 'Fixed':
+              this.fs.copy(this.templatePath('css/nav-top.css'), this.destinationPath('css/nav.css'));
+              break;
+            case 'Floating':
+              this.fs.copy(this.templatePath('css/nav-floating.css'), this.destinationPath('css/nav.css'));
+              break;
+            default:
+              break;
+          }
         }
       };
     }
-
-    // install() {
-    //
-    //   const deps    = this.getDeps(this.npmDependencies);
-    //   const devDeps = this.getDeps(this.npmDevDependencies);
-    //
-    //   this.say.info('Installing dependencies...');
-    //   this.npmInstall(deps, { save: true });
-    //   this.npmInstall(devDeps, { saveDev: true }, () => {
-    //     this.shellExec('npm shrinkwrap --loglevel error');
-    //     this.allDone();
-    //   });
-    //
-    // }
-
   }]);
 
   return HTMLWireframe;

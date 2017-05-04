@@ -1,0 +1,8 @@
+<% if(answers.nav === 'Floating') { %>
+nav {
+  position: fixed;
+}
+.content {
+  margin-top: 4rem;
+}
+<% } %>

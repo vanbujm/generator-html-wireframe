@@ -57,23 +57,23 @@ class HTMLWireframe extends Generator {
           this.destinationPath(`css/${this.answers.appName}-style.css`),
           {answers: this.answers}
         );
+        switch (this.answers.nav) {
+          case 'Fixed':
+            this.fs.copy(
+              this.templatePath('css/nav-top.css'),
+              this.destinationPath(`css/nav.css`));
+            break;
+          case 'Floating':
+            this.fs.copy(
+              this.templatePath('css/nav-floating.css'),
+              this.destinationPath(`css/nav.css`));
+            break;
+          default:
+            break;
+        }
       }
     };
   }
-
-  // install() {
-  //
-  //   const deps    = this.getDeps(this.npmDependencies);
-  //   const devDeps = this.getDeps(this.npmDevDependencies);
-  //
-  //   this.say.info('Installing dependencies...');
-  //   this.npmInstall(deps, { save: true });
-  //   this.npmInstall(devDeps, { saveDev: true }, () => {
-  //     this.shellExec('npm shrinkwrap --loglevel error');
-  //     this.allDone();
-  //   });
-  //
-  // }
 }
 
 module.exports = HTMLWireframe;
