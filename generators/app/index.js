@@ -101,6 +101,21 @@ var HTMLWireframe = function (_Generator) {
         }
       };
     }
+
+    // install() {
+    //
+    //   const deps    = this.getDeps(this.npmDependencies);
+    //   const devDeps = this.getDeps(this.npmDevDependencies);
+    //
+    //   this.say.info('Installing dependencies...');
+    //   this.npmInstall(deps, { save: true });
+    //   this.npmInstall(devDeps, { saveDev: true }, () => {
+    //     this.shellExec('npm shrinkwrap --loglevel error');
+    //     this.allDone();
+    //   });
+    //
+    // }
+
   }]);
 
   return HTMLWireframe;
