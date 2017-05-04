@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+body * {
+  border: 2px dotted black;
+  background: white;
+}
+
+.content {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}

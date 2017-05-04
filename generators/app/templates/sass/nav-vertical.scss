@@ -1,0 +1,102 @@
+body {
+  flex-direction: row;
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 8rem;
+
+  ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      a {
+        width: 100%;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0;
+      }
+
+      &.brand {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          background: white;
+        }
+      }
+
+      &:hover > * {
+        background: lightgray;
+      }
+    }
+  }
+
+  .hover-container {
+    position: relative;
+  }
+
+  .hover-container:hover{
+    .hover-menu {
+      display: flex;
+    }
+  }
+
+  .bottom, .top {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+
+    .hover-menu {
+      height: auto;
+      width: 100%;
+      position: absolute;
+      display: none;
+      flex-direction: column;
+      list-style: none;
+      padding: 0;
+
+      li {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        a {
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    align-items: center;
+    justify-content: flex-end;
+
+    .hover-menu {
+      bottom: 0;
+    }
+  }
+
+  .top {
+    .hover-menu {
+      top: 0;
+    }
+  }
+}
+

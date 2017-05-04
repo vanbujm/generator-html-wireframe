@@ -1,5 +1,7 @@
 @import "nav-vertical";
-
+body {
+  flex-direction: row-reverse;
+}
 .nav .bottom .hover-menu, .nav .top .hover-menu {
-  left: 100%;
+  right: 100%;
 }

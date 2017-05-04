@@ -70,6 +70,11 @@ var HTMLWireframe = function (_Generator) {
                       message: 'Choose a navigation option',
                       choices: ['Fixed', 'Floating', 'Left', 'Right', 'None'],
                       default: 'Fixed'
+                    }, {
+                      type: 'confirm',
+                      name: 'sass',
+                      message: 'Do you want Sass?',
+                      default: true
                     }];
                     _context.next = 5;
                     return _this2.prompt(prompts, function (props) {
@@ -101,9 +106,30 @@ var HTMLWireframe = function (_Generator) {
           switch (this.answers.nav) {
             case 'Fixed':
               this.fs.copy(this.templatePath('css/nav-top.css'), this.destinationPath('css/nav.css'));
+              if (this.answers.sass) {
+                this.fs.copy(this.templatePath('sass/nav-top.scss'), this.destinationPath('sass/nav.scss'));
+              }
               break;
             case 'Floating':
               this.fs.copy(this.templatePath('css/nav-floating.css'), this.destinationPath('css/nav.css'));
+              if (this.answers.sass) {
+                this.fs.copy(this.templatePath('sass/nav-top.scss'), this.destinationPath('sass/nav-top.scss'));
+                this.fs.copy(this.templatePath('sass/nav-floating.scss'), this.destinationPath('sass/nav.scss'));
+              }
+              break;
+            case 'Left':
+              this.fs.copy(this.templatePath('css/nav-left.css'), this.destinationPath('css/nav.css'));
+              if (this.answers.sass) {
+                this.fs.copy(this.templatePath('sass/nav-vertical.scss'), this.destinationPath('sass/nav-vertical.scss'));
+                this.fs.copy(this.templatePath('sass/nav-left.scss'), this.destinationPath('sass/nav.scss'));
+              }
+              break;
+            case 'Right':
+              this.fs.copy(this.templatePath('css/nav-right.css'), this.destinationPath('css/nav.css'));
+              if (this.answers.sass) {
+                this.fs.copy(this.templatePath('sass/nav-vertical.scss'), this.destinationPath('sass/nav-vertical.scss'));
+                this.fs.copy(this.templatePath('sass/nav-right.scss'), this.destinationPath('sass/nav.scss'));
+              }
               break;
             default:
               break;

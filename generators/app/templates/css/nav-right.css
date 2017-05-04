@@ -66,5 +66,8 @@ body {
   .nav .top .hover-menu {
     top: 0; }
 
+body {
+  flex-direction: row-reverse; }
+
 .nav .bottom .hover-menu, .nav .top .hover-menu {
-  left: 100%; }
+  right: 100%; }
