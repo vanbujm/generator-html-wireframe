@@ -1,0 +1,27 @@
+.nav {
+  background-color: black;
+  color: white; }
+  .nav ul li > *:hover {
+    background-color: white;
+    color: black; }
+  .nav ul li.brand:hover {
+    background-color: black;
+    color: white; }
+    .nav ul li.brand:hover *:hover {
+      background-color: black;
+      color: white; }
+
+.nav * {
+  background-color: black;
+  color: white; }
+
+.footer {
+  background-color: black;
+  color: white; }
+
+.footer * {
+  background-color: black;
+  color: white; }
+
+a {
+  text-decoration: none; }

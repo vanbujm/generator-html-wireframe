@@ -21,16 +21,9 @@
       a {
         display: flex;
         flex: 1;
+        padding: 0 0.5rem;
         justify-content: center;
         align-items: center;
-      }
-
-      &.brand {
-        text-decoration: none;
-        color: black;
-        &:hover {
-          background: white;
-        }
       }
 
       ul.hover-menu {
@@ -51,10 +44,6 @@
             padding: 0.5rem;
           }
         }
-      }
-
-      &:hover > * {
-        background: lightgray;
       }
     }
   }

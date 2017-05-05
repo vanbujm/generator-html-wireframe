@@ -17,7 +17,7 @@ class HTMLWireframe extends Generator {
       async appName() {
         console.log(yosay(chalk.blue('Welcome to the HTML Wireframe generator!')));
 
-        let defaultAppName = 'default-name';
+        let defaultAppName = 'test';
 
         const prompts = [
           {
@@ -38,7 +38,14 @@ class HTMLWireframe extends Generator {
             name: 'footer',
             choices: ['Fixed', 'Floating', 'None'],
             message: 'Choose a footer',
-            default: true
+            default: 'Fixed'
+          },
+          {
+            type: 'list',
+            name: 'theme',
+            choices: ['wireframe', 'black-and-white'],
+            message: 'Choose a theme',
+            default: 'wireframe'
           },
           {
             type: 'confirm',
@@ -167,6 +174,16 @@ class HTMLWireframe extends Generator {
         );
         this.handleNav();
         this.handleFooter();
+        this.fs.copy(
+          this.templatePath('css/theme/' + this.answers.theme + '.css'),
+          this.destinationPath('css/theme/' + this.answers.theme + '.css')
+        );
+        if (this.answers.sass) {
+          this.fs.copy(
+            this.templatePath('sass/theme/' + this.answers.theme + '.scss'),
+            this.destinationPath('sass/theme/' + this.answers.theme + '.scss')
+          );
+        }
       }
     };
   }

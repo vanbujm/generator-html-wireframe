@@ -111,7 +111,7 @@ var HTMLWireframe = function (_Generator) {
                   case 0:
                     console.log((0, _yosay2.default)(_chalk2.default.blue('Welcome to the HTML Wireframe generator!')));
 
-                    defaultAppName = 'default-name';
+                    defaultAppName = 'test';
                     prompts = [{
                       type: 'input',
                       name: 'appName',
@@ -128,7 +128,13 @@ var HTMLWireframe = function (_Generator) {
                       name: 'footer',
                       choices: ['Fixed', 'Floating', 'None'],
                       message: 'Choose a footer',
-                      default: true
+                      default: 'Fixed'
+                    }, {
+                      type: 'list',
+                      name: 'theme',
+                      choices: ['wireframe', 'black-and-white'],
+                      message: 'Choose a theme',
+                      default: 'wireframe'
                     }, {
                       type: 'confirm',
                       name: 'sass',
@@ -164,6 +170,10 @@ var HTMLWireframe = function (_Generator) {
           this.fs.copyTpl(this.templatePath('css/style.css'), this.destinationPath('css/' + this.answers.appName + '-style.css'), { answers: this.answers });
           this.handleNav();
           this.handleFooter();
+          this.fs.copy(this.templatePath('css/theme/' + this.answers.theme + '.css'), this.destinationPath('css/theme/' + this.answers.theme + '.css'));
+          if (this.answers.sass) {
+            this.fs.copy(this.templatePath('sass/theme/' + this.answers.theme + '.scss'), this.destinationPath('sass/theme/' + this.answers.theme + '.scss'));
+          }
         }
       };
     }

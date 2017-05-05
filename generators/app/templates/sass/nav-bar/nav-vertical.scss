@@ -29,18 +29,6 @@
         padding: 0.5rem 0;
       }
     }
-
-    li > *:hover {
-      background: lightgray;
-    }
-
-    li.brand > *{
-      text-decoration: none;
-      color: black;
-      &:hover {
-        background: white;
-      }
-    }
   }
 
   .hover-container {

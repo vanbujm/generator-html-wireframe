@@ -18,13 +18,9 @@
       .nav ul li a {
         display: flex;
         flex: 1;
+        padding: 0 0.5rem;
         justify-content: center;
         align-items: center; }
-      .nav ul li.brand {
-        text-decoration: none;
-        color: black; }
-        .nav ul li.brand:hover {
-          background: white; }
       .nav ul li ul.hover-menu {
         top: 0;
         height: auto;
@@ -39,8 +35,6 @@
           display: flex; }
           .nav ul li ul.hover-menu li a {
             padding: 0.5rem; }
-      .nav ul li:hover > * {
-        background: lightgray; }
   .nav .hover-container:hover ul {
     display: flex; }
   .nav .left, .nav .right {

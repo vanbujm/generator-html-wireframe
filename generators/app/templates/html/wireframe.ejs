@@ -10,6 +10,7 @@
   <% if (answers.footer !== 'None') { %>
   <link rel="stylesheet" type="text/css" href="../css/footer.css">
   <% } %>
+  <link rel="stylesheet" type="text/css" href="<%= '../css/theme/' + answers.theme + '.css'%>">
 </head>
 <body>
 <% if(answers.nav !== 'None') { %>
@@ -74,9 +75,10 @@
   <h2> Your answers:</h2>
   <h3>
     <ul>
-      <li>appName: <%= answers.appName %></li>
-      <li>nav: <%= answers.nav %></li>
-      <li>footer: <%= answers.footer %></li>
+      <li>Name: <%= answers.appName %></li>
+      <li>Nav: <%= answers.nav %></li>
+      <li>Footer: <%= answers.footer %></li>
+      <li>Theme: <%= answers.theme %></li>
       <li>Sass: <%= answers.sass %></li>
     </ul>
   </h3>

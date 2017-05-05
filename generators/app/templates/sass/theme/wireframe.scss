@@ -1,0 +1,24 @@
+body * {
+  border: 2px dotted black;
+  background: white;
+}
+
+hr {
+  border: 1px inset black;
+  width: 100%;
+}
+
+.nav {
+  ul {
+    li > *:hover {
+      background-color: lightgray;
+    }
+    li.brand:hover {
+      background-color: white;
+
+      *:hover {
+        background-color: white;
+      }
+    }
+  }
+}
