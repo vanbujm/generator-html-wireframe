@@ -3,6 +3,10 @@ body {
   flex-direction: column;
   margin: 0; }
 
+hr {
+  border: 1px inset black;
+  width: 100%; }
+
 .content {
   width: 70%;
   margin-left: auto;

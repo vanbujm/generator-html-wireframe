@@ -115,30 +115,30 @@ var HTMLWireframe = function (_Generator) {
                     prompts = [{
                       type: 'input',
                       name: 'appName',
-                      message: 'Enter app name:',
+                      message: _chalk2.default.magenta('Enter page name:'),
                       default: defaultAppName
                     }, {
                       type: 'list',
                       name: 'nav',
-                      message: 'Choose a navigation option',
+                      message: _chalk2.default.magenta('Choose a navigation option'),
                       choices: ['Fixed', 'Floating', 'Left', 'Right', 'None'],
                       default: 'Fixed'
                     }, {
                       type: 'list',
                       name: 'footer',
                       choices: ['Fixed', 'Floating', 'None'],
-                      message: 'Choose a footer',
+                      message: _chalk2.default.magenta('Choose a footer'),
                       default: 'Fixed'
                     }, {
                       type: 'list',
                       name: 'theme',
                       choices: ['wireframe', 'black-and-white'],
-                      message: 'Choose a theme',
+                      message: _chalk2.default.magenta('Choose a theme'),
                       default: 'wireframe'
                     }, {
                       type: 'confirm',
                       name: 'sass',
-                      message: 'Do you want Sass?',
+                      message: _chalk2.default.magenta('Do you want Sass?'),
                       default: true
                     }];
                     _context.next = 5;

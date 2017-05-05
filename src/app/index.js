@@ -23,13 +23,13 @@ class HTMLWireframe extends Generator {
           {
             type: 'input',
             name: 'appName',
-            message: 'Enter app name:',
+            message: chalk.magenta('Enter page name:'),
             default: defaultAppName
           },
           {
             type: 'list',
             name: 'nav',
-            message: 'Choose a navigation option',
+            message: chalk.magenta('Choose a navigation option'),
             choices: ['Fixed', 'Floating', 'Left', 'Right', 'None'],
             default: 'Fixed'
           },
@@ -37,20 +37,20 @@ class HTMLWireframe extends Generator {
             type: 'list',
             name: 'footer',
             choices: ['Fixed', 'Floating', 'None'],
-            message: 'Choose a footer',
+            message: chalk.magenta('Choose a footer'),
             default: 'Fixed'
           },
           {
             type: 'list',
             name: 'theme',
             choices: ['wireframe', 'black-and-white'],
-            message: 'Choose a theme',
+            message: chalk.magenta('Choose a theme'),
             default: 'wireframe'
           },
           {
             type: 'confirm',
             name: 'sass',
-            message: 'Do you want Sass?',
+            message: chalk.magenta('Do you want Sass?'),
             default: true
           }
         ];
