@@ -28,17 +28,17 @@
         align-items: center;
         padding: 0.5rem 0;
       }
+    }
 
-      &.brand {
-        text-decoration: none;
-        color: black;
-        &:hover {
-          background: white;
-        }
-      }
+    li > *:hover {
+      background: lightgray;
+    }
 
-      &:hover > * {
-        background: lightgray;
+    li.brand > *{
+      text-decoration: none;
+      color: black;
+      &:hover {
+        background: white;
       }
     }
   }
@@ -47,7 +47,7 @@
     position: relative;
   }
 
-  .hover-container:hover{
+  .hover-container:hover {
     .hover-menu {
       display: flex;
     }
