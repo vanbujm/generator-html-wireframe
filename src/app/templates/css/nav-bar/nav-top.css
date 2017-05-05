@@ -50,6 +50,3 @@
     flex-direction: row; }
   .nav .right {
     justify-content: flex-end; }
-
-.nav {
-  position: fixed; }

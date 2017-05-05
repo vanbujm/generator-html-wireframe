@@ -43,6 +43,59 @@ var HTMLWireframe = function (_Generator) {
   }
 
   _createClass(HTMLWireframe, [{
+    key: 'handleNav',
+    value: function handleNav() {
+      switch (this.answers.nav) {
+        case 'Fixed':
+          this.fs.copy(this.templatePath('css/nav-bar/nav-top.css'), this.destinationPath('css/nav.css'));
+          if (this.answers.sass) {
+            this.fs.copy(this.templatePath('sass/nav-bar/nav-top.scss'), this.destinationPath('sass/nav-bar/nav.scss'));
+          }
+          break;
+        case 'Floating':
+          this.fs.copy(this.templatePath('css/nav-bar/nav-floating.css'), this.destinationPath('css/nav.css'));
+          if (this.answers.sass) {
+            this.fs.copy(this.templatePath('sass/nav-bar/nav-top.scss'), this.destinationPath('sass/nav-bar/nav-top.scss'));
+            this.fs.copy(this.templatePath('sass/nav-bar/nav-floating.scss'), this.destinationPath('sass/nav-bar/nav.scss'));
+          }
+          break;
+        case 'Left':
+          this.fs.copy(this.templatePath('css/nav-bar/nav-left.css'), this.destinationPath('css/nav.css'));
+          if (this.answers.sass) {
+            this.fs.copy(this.templatePath('sass/nav-bar/nav-vertical.scss'), this.destinationPath('sass/nav-bar/nav-vertical.scss'));
+            this.fs.copy(this.templatePath('sass/nav-bar/nav-left.scss'), this.destinationPath('sass/nav-bar/nav.scss'));
+          }
+          break;
+        case 'Right':
+          this.fs.copy(this.templatePath('css/nav-bar/nav-right.css'), this.destinationPath('css/nav.css'));
+          if (this.answers.sass) {
+            this.fs.copy(this.templatePath('sass/nav-bar/nav-vertical.scss'), this.destinationPath('sass/nav-bar/nav-vertical.scss'));
+            this.fs.copy(this.templatePath('sass/nav-bar/nav-right.scss'), this.destinationPath('sass/nav-bar/nav.scss'));
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  }, {
+    key: 'handleFooter',
+    value: function handleFooter() {
+      if (this.answers.footer !== 'None') {
+        if (this.answers.footer === 'Floating') {
+          this.fs.copy(this.templatePath('css/footer/footer-floating.css'), this.destinationPath('css/footer.css'));
+          if (this.answers.sass) {
+            this.fs.copy(this.templatePath('sass/footer/footer-floating.scss'), this.destinationPath('sass/footer-floating.scss'));
+            this.fs.copy(this.templatePath('sass/footer/footer.scss'), this.destinationPath('sass/footer.scss'));
+          }
+        } else {
+          this.fs.copy(this.templatePath('css/footer/footer.css'), this.destinationPath('css/footer.css'));
+          if (this.answers.sass) {
+            this.fs.copy(this.templatePath('sass/footer/footer.scss'), this.destinationPath('sass/footer.scss'));
+          }
+        }
+      }
+    }
+  }, {
     key: 'prompting',
     get: function get() {
       var app = this;
@@ -70,6 +123,12 @@ var HTMLWireframe = function (_Generator) {
                       message: 'Choose a navigation option',
                       choices: ['Fixed', 'Floating', 'Left', 'Right', 'None'],
                       default: 'Fixed'
+                    }, {
+                      type: 'list',
+                      name: 'footer',
+                      choices: ['Fixed', 'Floating', 'None'],
+                      message: 'Choose a footer',
+                      default: true
                     }, {
                       type: 'confirm',
                       name: 'sass',
@@ -103,37 +162,8 @@ var HTMLWireframe = function (_Generator) {
           console.log(_chalk2.default.green('copying files...\n'));
           this.fs.copyTpl(this.templatePath('html/wireframe.ejs'), this.destinationPath('html/' + this.answers.appName + '-wireframe.html'), { answers: this.answers });
           this.fs.copyTpl(this.templatePath('css/style.css'), this.destinationPath('css/' + this.answers.appName + '-style.css'), { answers: this.answers });
-          switch (this.answers.nav) {
-            case 'Fixed':
-              this.fs.copy(this.templatePath('css/nav-top.css'), this.destinationPath('css/nav.css'));
-              if (this.answers.sass) {
-                this.fs.copy(this.templatePath('sass/nav-top.scss'), this.destinationPath('sass/nav.scss'));
-              }
-              break;
-            case 'Floating':
-              this.fs.copy(this.templatePath('css/nav-floating.css'), this.destinationPath('css/nav.css'));
-              if (this.answers.sass) {
-                this.fs.copy(this.templatePath('sass/nav-top.scss'), this.destinationPath('sass/nav-top.scss'));
-                this.fs.copy(this.templatePath('sass/nav-floating.scss'), this.destinationPath('sass/nav.scss'));
-              }
-              break;
-            case 'Left':
-              this.fs.copy(this.templatePath('css/nav-left.css'), this.destinationPath('css/nav.css'));
-              if (this.answers.sass) {
-                this.fs.copy(this.templatePath('sass/nav-vertical.scss'), this.destinationPath('sass/nav-vertical.scss'));
-                this.fs.copy(this.templatePath('sass/nav-left.scss'), this.destinationPath('sass/nav.scss'));
-              }
-              break;
-            case 'Right':
-              this.fs.copy(this.templatePath('css/nav-right.css'), this.destinationPath('css/nav.css'));
-              if (this.answers.sass) {
-                this.fs.copy(this.templatePath('sass/nav-vertical.scss'), this.destinationPath('sass/nav-vertical.scss'));
-                this.fs.copy(this.templatePath('sass/nav-right.scss'), this.destinationPath('sass/nav.scss'));
-              }
-              break;
-            default:
-              break;
-          }
+          this.handleNav();
+          this.handleFooter();
         }
       };
     }

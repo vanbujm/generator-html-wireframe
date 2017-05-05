@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  height: 10vh;
+
+  .left, .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .left > *, .right > * {
+    margin: 0 0.5rem;
+  }
+
+  .right {
+    justify-content: flex-end;
+  }
+}
+
+.stacked-text {
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+
+.footer.squeezed.Left {
+  margin-left: 8rem;
+}
+.footer.squeezed.Right {
+  margin-right: 8rem;
+}
