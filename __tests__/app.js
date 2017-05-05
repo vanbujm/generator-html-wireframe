@@ -9,19 +9,25 @@ let yeomanContext;
 const testName = 'testName';
 
 describe('generator-html-wireframe:app', () => {
-  beforeAll(async() => {
+  beforeAll(async () => {
     yeomanContext = await helpers.run(path.join(__dirname, '../src/app/index.js'))
-      .withPrompts({appName: testName, nav: 'Fixed'});
+      .withPrompts({appName: testName, nav: 'Fixed', footer: 'Fixed', sass: true});
   });
 
-  test('should write html and css files', () => {
+  test('should write html files', () => {
     assert.file(['html/' + testName + '-wireframe.html']);
+  });
+
+  test('should write css files', () => {
     assert.file(['css/' + testName + '-style.css']);
   });
 
-  test('should generate test wireframe', () => {
+  test('should write sass files', () => {
+    assert.file(['sass/footer.scss']);
+  });
+
+  test('should generate test wireframe as expected', () => {
     const file = fs.readFileSync('html/' + testName + '-wireframe.html', 'utf8');
     expect(file).toMatchSnapshot();
   });
-
 });

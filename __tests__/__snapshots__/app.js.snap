@@ -20,55 +20,55 @@ exports[`generator-html-wireframe:app should generate test wireframe 1`] = `
 <nav class=\\"nav\\">
   <ul class=\\"left\\">
     <li class=\\"brand\\">
-      <a href=\\"\\">brand</a>
+      <a href=\\"\\">Brand</a>
     </li>
     <li>
-      <a href=\\"\\">item 1</a>
+      <a href=\\"\\">Item 1</a>
     </li>
     <li>
-      <a href=\\"\\">item 2</a>
+      <a href=\\"\\">Item 2</a>
     </li>
     <li>
-      <a href=\\"\\">item 3</a>
+      <a href=\\"\\">Item 3</a>
     </li>
     <li class=\\"hover-container\\">
-      <a href=\\"\\">hover list item 4</a>
+      <a href=\\"\\">Hover List Item 4</a>
       <ul class=\\"hover-menu\\">
         <li>
-          <a href=\\"\\">hover item 1</a>
+          <a href=\\"\\">Hover Item 1</a>
         </li>
         <li>
-          <a href=\\"\\">hover item 2</a>
+          <a href=\\"\\">Hover Item 2</a>
         </li>
         <li>
-          <a href=\\"\\">hover item 3</a>
+          <a href=\\"\\">Hover Item 3</a>
         </li>
         <li>
-          <a href=\\"\\">hover item 4</a>
+          <a href=\\"\\">Hover Item 4</a>
         </li>
       </ul>
     </li>
   </ul>
   <ul class=\\"right\\">
     <li class=\\"hover-container\\">
-      <a href=\\"\\">hover list item 5</a>
+      <a href=\\"\\">Hover List Item 5</a>
       <ul class=\\"hover-menu\\">
         <li>
-          <a href=\\"\\">hover item 5</a>
+          <a href=\\"\\">Hover Item 5</a>
         </li>
         <li>
-          <a href=\\"\\">hover item 6</a>
+          <a href=\\"\\">Hover Item 6</a>
         </li>
         <li>
-          <a href=\\"\\">hover item 7</a>
+          <a href=\\"\\">Hover Item 7</a>
         </li>
         <li>
-          <a href=\\"\\">hover item 8</a>
+          <a href=\\"\\">Hover Item 8</a>
         </li>
       </ul>
     </li>
     <li>
-      <a href=\\"\\">right item 6</a>
+      <a href=\\"\\">Item 6</a>
     </li>
   </ul>
 </nav>
