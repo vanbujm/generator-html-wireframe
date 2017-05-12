@@ -42,7 +42,7 @@
   "eslintConfig": {
     "extends": "xo-space"
   },
-  "repository": "vanbujm/generator-yo",
+  "repository": "vanbujm/generator-html-wireframe",
   "scripts": {
     "lint": "eslint src/**/*.es6",
     "babel": "babel src --out-dir generators --copy-files",
