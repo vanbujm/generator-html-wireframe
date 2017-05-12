@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generator-html-wireframe:app should generate test wireframe 1`] = `
+exports[`generator-html-wireframe:app should generate test wireframe as expected 1`] = `
 "<!DOCTYPE html>
 <html lang=\\"en\\">
 <head>
