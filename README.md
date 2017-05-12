@@ -1,7 +1,7 @@
 # generator-html-wireframe [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Creates wireframe html pages for rapid prototyping
 
-##Example
+## Example
 ![screen-shot](https://cloud.githubusercontent.com/assets/2577981/25983196/9eed6eca-3715-11e7-9955-0d2fd65bad91.jpg)
 
 ## Installation
