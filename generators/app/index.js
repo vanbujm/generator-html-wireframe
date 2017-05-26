@@ -24,7 +24,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* eslint-disable no-useless-constructor */
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+/* eslint-disable no-useless-constructor */
 
 
 var HTMLWireframe = function (_Generator) {
@@ -167,9 +168,13 @@ var HTMLWireframe = function (_Generator) {
         app: function app() {
           console.log(_chalk2.default.green('copying files...\n'));
           this.fs.copyTpl(this.templatePath('html/wireframe.ejs'), this.destinationPath('html/' + this.answers.appName + '-wireframe.html'), { answers: this.answers });
+
           this.fs.copyTpl(this.templatePath('css/style.css'), this.destinationPath('css/' + this.answers.appName + '-style.css'), { answers: this.answers });
+
           this.handleNav();
+
           this.handleFooter();
+
           this.fs.copy(this.templatePath('css/theme/' + this.answers.theme + '.css'), this.destinationPath('css/theme/' + this.answers.theme + '.css'));
           if (this.answers.sass) {
             this.fs.copy(this.templatePath('sass/theme/' + this.answers.theme + '.scss'), this.destinationPath('sass/theme/' + this.answers.theme + '.scss'));

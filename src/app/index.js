@@ -1,25 +1,32 @@
+// @flow
 /* eslint-disable no-useless-constructor */
 import 'babel-polyfill';
 import Generator from 'yeoman-generator';
 import chalk from 'chalk';
 import yosay from 'yosay';
 
+type Prompt = {
+  type: string,
+  name: string,
+  message: string,
+};
+
 class HTMLWireframe extends Generator {
 
-  constructor(...args) {
+  constructor(...args: Array<mixed>) {
     super(...args);
   }
 
-  get prompting() {
+  get prompting(): { appName: mixed } {
     let app = this;
     return {
 
       async appName() {
         console.log(yosay(chalk.blue('Welcome to the HTML Wireframe generator!')));
 
-        let defaultAppName = 'test';
+        let defaultAppName: string = 'test';
 
-        const prompts = [
+        const prompts: Prompt[] = [
           {
             type: 'input',
             name: 'appName',
@@ -158,7 +165,7 @@ class HTMLWireframe extends Generator {
     }
   }
 
-  get writing() {
+  get writing(): { app: mixed } {
     return {
       app() {
         console.log(chalk.green('copying files...\n'));
@@ -167,13 +174,17 @@ class HTMLWireframe extends Generator {
           this.destinationPath(`html/${this.answers.appName}-wireframe.html`),
           {answers: this.answers}
         );
+
         this.fs.copyTpl(
           this.templatePath('css/style.css'),
           this.destinationPath(`css/${this.answers.appName}-style.css`),
           {answers: this.answers}
         );
+
         this.handleNav();
+
         this.handleFooter();
+
         this.fs.copy(
           this.templatePath('css/theme/' + this.answers.theme + '.css'),
           this.destinationPath('css/theme/' + this.answers.theme + '.css')
